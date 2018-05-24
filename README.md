@@ -5,4 +5,4 @@ An Amazon clone created with React.js.
    
    All the information displayed on the app is stored using Google's Firebase servers. The items name, image, quantity, size, etc are all stored on the server. When items are added to the cart, it is also stored on the server, but only temporarily. When checked out, the items are moved to another node on the server while the cart items are deleted.
       
-      The app also allows users to create an account. This is also done using the Firebase servers. Users will only be able to checkout if logged in. This is done so that when the user look at their orders, only the orders attached to the account is displayed.
+   The app also allows users to create an account. This is also done using the Firebase servers. Users will only be able to checkout if logged in. This is done so that when the user look at their orders, only the orders attached to the account is displayed.
