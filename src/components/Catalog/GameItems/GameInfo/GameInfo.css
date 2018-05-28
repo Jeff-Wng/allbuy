@@ -1,0 +1,218 @@
+.GameInfo {
+    width: 80%;
+    height: 100%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.GameInfo h1 {
+    flex-basis: 100%;
+}
+
+.Arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.Studio {
+    font-size: 15px;
+}
+
+.Pictures {
+    flex-basis: 35%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Large {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto 25px auto;
+}
+
+.Small {
+    width: 100px;
+    height: 75px;
+    border: 3px solid transparent;
+}
+
+.Small:hover {
+    border: 3px solid rgb(55, 55, 117);
+}
+
+.SideInfo {
+    padding: 25px;
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: column;
+    margin-left: 25px;
+}
+
+.SideInfo p {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.SideInfo i {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.SideInfo select.Platform {
+    width: 125px;
+    height: 35px;
+    outline: none;
+    margin-bottom: 25px; 
+}
+
+.SideInfo select.Quantity {
+    width: 8%;
+    height: 35px;
+    outline: none;
+}
+
+.SideInfo button {
+    width: 15%;
+    height: 50px;
+    background-color: #eee;
+    font-weight: bold;
+    border: 1px solid black;
+    outline: none;
+}
+
+.SideInfo button:hover {
+    background-color: rgb(55, 55, 117);
+    border: 1px solid white;
+    color: white;
+}
+
+.SideInfo button:active {
+    transform: scale(0.9);
+}
+
+.SideInfo button:disabled {
+    filter: grayscale(100%);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1440px) {
+    .SideInfo select {
+        width: 15%;
+    }
+
+    .SideInfo button {
+        width: 20%;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .Pictures {
+         flex-basis: 45%;
+    }
+
+    .SideInfo {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    .GameInfo {
+        flex-flow: column;
+    }
+
+    .Pictures {
+        width: 60%;
+        margin: 25px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Pictures {
+        width: 75%; 
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .SideInfo select {
+        width: 20%;
+    }
+
+    .SideInfo button {
+        width: 30%;
+    }
+
+    .SideInfo p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .GameInfo {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .Pictures {
+        width: 95%;
+    }
+
+    .SideInfo p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .GameInfo {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    
+    .Max i {
+        font-size: 10px;
+    }
+
+    .Arrow {
+        padding: 5px;
+    }
+
+    .Pictures {
+        width: 100%;
+    }
+
+    .SideInfo {
+         width: 100%;
+         padding: 5px;
+         margin-left: 0;
+    }
+
+    .SideInfo p {
+        font-size: 12px;
+    }
+
+    .SideInfo button {
+        width: 30%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+}

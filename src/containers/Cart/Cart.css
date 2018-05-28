@@ -1,0 +1,56 @@
+.Cart h1 {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.Bottom {
+    width: 65%;
+    margin: 50px auto;
+}
+
+.Bottom p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.Bottom button {
+    width: 150px;
+    height: 75px;
+    background-color: #eee;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 25px;
+    outline: none;
+}
+
+.Bottom button:hover {
+    border: 1px solid white;
+    background-color: rgb(55, 55, 117);
+    color: white;
+}
+
+.Bottom button:active {
+    transform: scale(0.9);
+}
+
+@media screen and (max-width: 1200px) {
+    .Bottom {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Bottom {
+        width: 95%;
+    }
+
+    .Bottom p {
+        font-size: 25px;
+    }
+
+    .Bottom button {
+        font-size: 20px;
+        width: 25%;
+        height: 45px;
+    }
+}

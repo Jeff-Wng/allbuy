@@ -1,0 +1,17 @@
+.Ordered {
+    text-align: center;
+    font-size: 25px;
+}
+
+.Title {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.Ordered a {
+    text-decoration: none;
+}
+
+.Ordered a:visited {
+    color: black;
+}

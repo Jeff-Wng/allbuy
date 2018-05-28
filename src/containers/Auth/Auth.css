@@ -1,0 +1,71 @@
+.Inputs {
+    display: flex;
+    flex-flow: column;
+    width: 30%;
+    margin: 100px auto;
+    padding: 50px;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.Inputs p {
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.Inputs input {
+    width: 75%;
+    padding: 15px;
+    outline: none;
+    margin: 0 auto 50px auto;
+    border: 1px solid black;
+    font-size: 15px;
+}
+
+.Inputs button {
+    width: 30%;
+    margin: 0 auto;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    outline: none;
+    font-weight: bold;
+}
+
+.Inputs button:hover {
+    background-color: rgb(55, 55, 117);
+    border: 1px solid white;
+    color: white;
+}
+
+.Inputs button:active {
+    transform: scale(0.9);
+}
+
+.Inputs button:disabled {
+    filter: grayscale(100%);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.Error {
+    color: red;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .Inputs {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .Inputs {
+        width: 80%;
+        padding: 10px;
+    }
+}

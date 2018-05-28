@@ -1,0 +1,45 @@
+.GameItems {
+    width: 20%;
+    height: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.GameItems img {
+    width: 100%;
+}
+
+.GameItems h3 {
+    text-align: center;
+}
+
+.GameItems p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .GameItems {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .GameItems {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .GameItems {
+        width: 90%;
+        margin-right: 50px;
+    }
+}

@@ -1,0 +1,87 @@
+.CartItems {
+    width: 65%;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.LeftContent {
+    width: 100%;
+    display: flex;
+}
+
+.LeftContent p {
+    font-size: 18px;
+    margin: 5px;
+}
+
+.LeftContent img {
+    flex-basis: 175px;
+    height: 200px;
+    margin-right: 25px;
+}
+
+.Info {
+    display: flex;
+    flex-basis: 50%;
+    flex-flow: column;
+    font-weight: bold;
+}
+
+.CartItems i {
+    margin: auto 25px auto auto;
+}
+
+.CartItems i:hover {
+    color: rgb(182, 3, 3);
+}
+
+.CartItems i:active {
+    transform: scale(0.9);
+}
+
+@media screen and (max-width: 1200px) {
+    .CartItems {
+        width: 85%;
+    }
+
+    .Info h2 {
+        font-size: 20px;
+    }
+
+    .Info p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .CartItems {
+        width: 95%;
+    }
+
+    .LeftContent img {
+        width: 100px;
+    }
+    
+    .Info h2 {
+        font-size: 18px;
+    }
+
+    .Info p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Info h2 {
+        font-size: 15px;
+    }
+
+    .Info p {
+        font-size: 10px;
+    }
+}
