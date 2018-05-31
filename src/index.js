@@ -18,12 +18,12 @@ import navbarReducer from './store/Reducers/navbarReducer';
 import cartReducer from './store/Reducers/cartReducer';
 
 var config = {
-    apiKey: "AIzaSyBS7MErjiCho_gle7A8RX2MsyK3re6WUPM",
-    authDomain: "allbuy-restore.firebaseapp.com",
-    databaseURL: "https://allbuy-restore.firebaseio.com",
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_URL,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
     projectId: "allbuy-restore",
-    storageBucket: "allbuy-restore.appspot.com",
-    messagingSenderId: "265223880567"
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_SENDER_ID
   };
 firebase.initializeApp(config);
 

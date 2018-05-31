@@ -13,9 +13,9 @@ export const authSuccess = (name, email, password) => {
 }
 
 export const authOut = () => {
-    localStorage.removeItem('displayName');
-    localStorage.removeItem('email');
-    localStorage.removeItem('passwsord');
+    sessionStorage.removeItem('displayName');
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('passwsord');
     return {
         type: actionTypes.AUTH_OUT
     }
@@ -40,9 +40,9 @@ export const auth = (name, email, password, signUp) => {
                         })
                     }
                     dispatch(authSuccess(name, email, password));
-                    localStorage.setItem('displayName', name);
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('password', password);
+                    sessionStorage.setItem('displayName', name);
+                    sessionStorage.setItem('email', email);
+                    sessionStorage.setItem('password', password);
                 })
                 .catch(err => {
                     dispatch(getAuthErr(err.message));
@@ -51,9 +51,9 @@ export const auth = (name, email, password, signUp) => {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(response => {
                     dispatch(authSuccess(response.user.displayName, response.user.email, password));
-                    localStorage.setItem('displayName', response.user.displayName);
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('password', password);
+                    sessionStorage.setItem('displayName', response.user.displayName);
+                    sessionStorage.setItem('email', email);
+                    sessionStorage.setItem('password', password);
                 })
                 .catch(err => {
                     dispatch(getAuthErr(err.message));
@@ -76,9 +76,9 @@ export const signOut = () => {
 
 export const checkAuth = () => {
     return dispatch => {
-        const name = localStorage.getItem('displayName');
-        const email = localStorage.getItem('email');
-        const password = localStorage.getItem('password');
+        const name = sessionStorage.getItem('displayName');
+        const email = sessionStorage.getItem('email');
+        const password = sessionStorage.getItem('password');
         if(email) {
             dispatch(authSuccess(name, email, password));
         } else {
