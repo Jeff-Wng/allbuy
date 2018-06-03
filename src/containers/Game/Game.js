@@ -28,6 +28,7 @@ class Game extends Component {
                 <div className={classes.Game}>
                     {catalog}
                 </div>
+                <footer>Image Source: <a href="https://www.thinkgeek.com">ThinkGeek</a></footer>
             </div>
         )
     }

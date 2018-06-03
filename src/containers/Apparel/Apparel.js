@@ -28,6 +28,7 @@ class Apparel extends Component {
                 <div className={classes.Apparel}>
                     {catalog}
                 </div>
+                <footer>Image Source: <a href="https://www.thinkgeek.com">ThinkGeek</a></footer>
             </div>
         )
     }
