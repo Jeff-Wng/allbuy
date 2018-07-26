@@ -8,6 +8,7 @@ import * as actions from '../../store/Actions/index';
 
 class Cart extends Component {
     componentDidMount() {
+        // Get all cart items and resets notification status
         this.props.getCart();
         this.props.reset();
     }
@@ -15,6 +16,7 @@ class Cart extends Component {
     render() {
         let items = null;
         let checkout = null;
+        // If cart has items, checkout displays shipping and checkout
         if(this.props.hasItems) {
             checkout = 
                 <React.Fragment>
@@ -25,6 +27,7 @@ class Cart extends Component {
                 </React.Fragment>
         }
         if(this.props.hasItems) {
+            // if cart has items, map and render items
             items = this.props.cart.map(items => {
                 return <CartItems 
                     key={items.name}
@@ -36,6 +39,7 @@ class Cart extends Component {
                     size={items.size}
                     deleteHandler={(name) => this.props.deleteCart(items.name)} />
             })
+        // If cart has no items, notify the user
         } else (
             items = <h1>There are no items in your cart</h1>
         )

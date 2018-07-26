@@ -18,6 +18,7 @@ class Auth extends Component {
         this.props.reset();
     }
     
+    // Changes form between Sign Up and Log In
     onChangeHandler = (event) => {
         this.setState({[event.target.name]: event.target.value}, () => {
             if(this.state.signUp) {
@@ -32,6 +33,7 @@ class Auth extends Component {
         });
     }
 
+    // User info is passed to state on submit
     submitHandler = () => {
         this.props.onAuth(this.state.name, this.state.email, this.state.password, this.state.signUp);
         this.setState({
@@ -41,6 +43,7 @@ class Auth extends Component {
         })
     }
 
+    // Changes state to determine with type of auth methods
     changeAuthMethodHandler = () => {
         this.setState({signUp: !this.state.signUp});
     }
@@ -59,6 +62,8 @@ class Auth extends Component {
             input = <p>Log-In</p>;
         }
 
+        // Users wh oare already authenticated cannot reach this page
+        // Redirected to home
         let redirect = null;
         if(this.props.loggedIn) {
             redirect = <Redirect to='/' />

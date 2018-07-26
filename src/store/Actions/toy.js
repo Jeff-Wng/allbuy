@@ -9,6 +9,7 @@ export const toySuccess = (items) => {
     }
 }
 
+// Calls to Firebase to retrieve all Toy items stored in database
 export const getToy = () => {
     return dispatch => {
         let ref = firebase.database().ref('Toys').orderByKey();

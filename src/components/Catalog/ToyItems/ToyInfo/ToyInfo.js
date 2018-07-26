@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 const toyInfo = (props) => {
     let largeImg = null;
+    // Changes preview image
     if(props.changeImg) {
         largeImg = props.img1;
     } else if (!props.changeImg) {
@@ -12,6 +13,7 @@ const toyInfo = (props) => {
 
     return (
         <div className={classes.ToyInfo}>
+        {/* Back button to return to previous page */}
             <Link to={'' + props.prevPath}><i className={classes.Arrow} /></Link>
             <h1>{props.name}</h1>
             <div className={classes.Pictures}>

@@ -8,12 +8,13 @@ import * as actions from '../../store/Actions/index';
 class Game extends Component {
 
     componentDidMount() {
+        // Gets game items from Firebase on mount
         this.props.getGame();
         this.props.reset();
     }
 
     render() {
-
+        
         let catalog = this.props.items.map(items => {
             return <GameItems 
                 key={items.name}

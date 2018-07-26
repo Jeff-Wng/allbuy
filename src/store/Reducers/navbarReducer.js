@@ -5,13 +5,15 @@ const initialState = {
     added: false
 }
 
+// changes state added to true to reveal 'Add to cart' notification
 const added = (state, action) =>{
     return updateObject(state, {
         added: true
     })
 }
 
-const reset = (state, actin) => {
+// Resets added state on each componentDidMount to close 'Add to cart' notification
+const reset = (state, action) => {
     return updateObject(state, {
         added: false
     })

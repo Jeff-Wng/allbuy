@@ -9,6 +9,7 @@ export const apparelSuccess = (items) => {
     }
 }
 
+// Calls to firebase to retrieve all Apparel catelog items
 export const getApparel = () => {
     return dispatch => {
         let ref = firebase.database().ref('Apparel').orderByKey();

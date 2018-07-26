@@ -9,6 +9,7 @@ export const gameSuccess = (items) => {
     }
 }
 
+// Calls to firebase to retrieve all Game items from database
 export const getGame = () => {
     return dispatch => {
         let ref = firebase.database().ref('Games').orderByKey();

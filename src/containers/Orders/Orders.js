@@ -9,6 +9,8 @@ import {Redirect} from 'react-router-dom';
 let data = [];
 
 class Orders extends Component {
+    // Orders only show up for authenticated users
+    // Retrieve orders from firebase based on user email
     componentDidMount() {
         let ref = firebase.database().ref('Orders').orderByChild('email').equalTo(this.props.email);
         ref.once('value')
@@ -33,6 +35,8 @@ class Orders extends Component {
         })
 
         let redirect = null;
+        // If user is not authenticated, they cannot access this page
+        // Is reditected back to homepage
         if(!this.props.loggedIn) {
             redirect = <Redirect to='/' />
         }

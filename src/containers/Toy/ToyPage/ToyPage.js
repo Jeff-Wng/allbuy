@@ -21,10 +21,12 @@ class ToyPage extends Component {
         this.props.reset();
     }
 
+    // Image handler sets state on whether the user clicked on another preview photo
     changeImgHandler = () => {
         this.setState({changeImg: !this.state.changeImg});
     }
 
+    // Get the quantity of the item using event binding
     changeQuantityHandler = (event) => {
         this.setState({quantity: event.target.value}, () => {
             if(this.state.quantity !== '') {
@@ -33,6 +35,7 @@ class ToyPage extends Component {
         });
     }
 
+    // Adds this item into cart
     addCartHandler = () => {
         const cartRef = firebase.database().ref('Cart');
         cartRef.push(cart);

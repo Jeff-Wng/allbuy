@@ -5,16 +5,19 @@ import {Link} from 'react-router-dom';
 const gameInfo = (props) => {
     let options = [];
 
+    // Retrieves platforms available for game and passed to an array
     for(let key in props.platform){
         options.push(props.platform[key]);
     }
 
+    // Map those platforms into a dropdown
     let choices = options.map(choices => {
         return <option value={'' + choices} key={choices}>{choices}</option>
     })
 
     return (
         <div className={classes.GameInfo}>
+            {/* Back button to return to previous page */}
             <Link to={'' + props.prevPath}><i className={classes.Arrow} /></Link>
             <h1>{props.name}  <span className={classes.Studio}>by {props.studio}</span></h1>
             <div className={classes.Pictures}>

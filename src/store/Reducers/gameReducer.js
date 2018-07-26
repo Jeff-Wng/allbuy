@@ -5,6 +5,8 @@ const initialState = {
     items: []
 }
 
+// Game catelog successfully retrieved from Firebase
+// Adds all Game item info into array in state
 const gameSuccess = (state, action) =>{
     return updateObject(state, {
         items: action.items

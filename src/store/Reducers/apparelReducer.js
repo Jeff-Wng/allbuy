@@ -5,6 +5,7 @@ const initialState = {
     items: []
 }
 
+// Apparel items successfully retrieved from Firebase
 const apparelSuccess = (state, action) =>{
     return updateObject(state, {
         items: action.items

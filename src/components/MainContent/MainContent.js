@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 const mainContent = () => {
     return (
+        // Homepage, displays all categories with over lay
         <div className={classes.mainContent}>
             <div className={classes.Apparel}>
                 <Link to='/apparel'>

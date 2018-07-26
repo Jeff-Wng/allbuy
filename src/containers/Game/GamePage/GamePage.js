@@ -23,6 +23,7 @@ class GamePage extends Component {
         this.props.reset();
     }
 
+    // Indicated whether the user clicked on a different preview photo
     onChangeHandler = (event) => {
         this.setState({[event.target.name]: event.target.value}, () => {
             if(this.state.platform !== '' && this.state.quantity !== '') {
@@ -31,6 +32,7 @@ class GamePage extends Component {
         });
     }
 
+    // Adds this item to the cart
     addCartHandler = () => {
         const cartRef = firebase.database().ref('Cart');
         cartRef.push(cart);

@@ -8,6 +8,8 @@ import * as actions from '../../store/Actions/index';
 class Apparel extends Component {
 
     componentDidMount() {
+        // Calls on action creators to get all Apparel items from Firebase
+        // Resets notification status
         this.props.getApparel();
         this.props.reset();
     }

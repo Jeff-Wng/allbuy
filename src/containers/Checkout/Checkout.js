@@ -25,6 +25,7 @@ class Checkout extends Component {
         itemImg: []
     }
 
+    // Updates shipping charges in state based on what the user picked in a dropdown
     onChangeHandler = (event) => {
         this.setState({[event.target.name]: event.target.value}, () => {
             if(this.state.shipping === 'standard') {
@@ -40,6 +41,7 @@ class Checkout extends Component {
         }) 
     }
 
+    // Submits order
     onOrderHandler = () => {
         let ref = firebase.database().ref('Cart').orderByKey();
         let orderRef = firebase.database().ref('Orders');
@@ -47,9 +49,13 @@ class Checkout extends Component {
             .then(snapshot => {
                 for(let key in snapshot.val()) {
                     let ref = firebase.database().ref('Cart/' + key);
+                    // Updates database with which email the order was from
                     ref.update({email: this.props.email});
                 }
             })
+        // Copies the Cart object in the database to the Orders object
+        // setTimeout is needed because Firebase deletes immediately
+        // Need time for Cart object to update with user email, then passed to Orders object
         setTimeout(() => {
             ref.once('value')
                 .then(data => {
@@ -58,6 +64,7 @@ class Checkout extends Component {
                     })
                 })
         }, 1000)
+        // Cart items are deleted
         setTimeout(() => {
             for(let key in this.props.keys) {
                 firebase.database().ref('Cart/' + this.props.keys[key]).remove();
@@ -70,6 +77,8 @@ class Checkout extends Component {
         let items = null;
         let order = null;
         let shipping = null;
+        // Based on which shipping speed the user choose, the info was passed to state
+        // Use state to change what the final shipping price at checkout
         if(this.state.shipPrice === null) {
             shipping = <p>Shipping: Please select shipping speed</p>;
         }
@@ -85,6 +94,7 @@ class Checkout extends Component {
             totalPrice = (parseFloat(this.props.totalPrice) + parseFloat(this.state.shipPrice)).toFixed(2)
         }
 
+        // Shipping info user needs to enter
         if(this.props.hasItems) {
             order = 
                 <React.Fragment>
@@ -162,6 +172,8 @@ class Checkout extends Component {
                             <hr />
                             <p className={classes.Total}>Total Price: ${totalPrice}</p>
                         </div>
+                        {/* isValid determines if all inputs have been enterd
+                            The button is disabled by default and waits for the isValid state to change to enable */}
                         {!this.state.isValid ? <button disabled>Order</button> : <Link to='/ordered'><button onClick={this.onOrderHandler}>Order</button></Link>}
                     </div>
                 </React.Fragment>
@@ -182,10 +194,14 @@ class Checkout extends Component {
         }
 
         let redirectLogin = null;
+        // Unauthenticated users cannot reach Checkout
+        // Redirects to login screen
         if(!this.props.loggedIn) {
             redirectLogin = <Redirect to='/auth' />
         }
 
+        // Users with no item in their carts cannot reach checkout
+        // Redirected to homepage
         let redirectCheckout = null;
         if(!this.props.hasItems) {
             redirectCheckout = <Redirect to='/' />

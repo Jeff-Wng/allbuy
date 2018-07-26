@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   render() {
+    // Maping routes to each individual item in the catelog
     let apparelRoutes = this.props.apparelItems.map(routes => {
       return <Route path={'/apparel/' + routes.name} exact component={ApparelPage} key={routes.name} />
     })

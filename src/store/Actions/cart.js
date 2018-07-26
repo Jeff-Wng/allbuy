@@ -2,6 +2,7 @@ import * as actionTypes from './actionTypes';
 import firebase from 'firebase/app';
 import 'firebase/database';
 
+// Successfully added item into cart, passed info to state
 export const cartSuccess = (keys, cart, totalPrice) => {
     return {
         type: actionTypes.CART_SUCCESS,
@@ -11,12 +12,14 @@ export const cartSuccess = (keys, cart, totalPrice) => {
     }
 }
 
+// Delete item success
 export const deleteSuccess = () => {
     return {
         type: actionTypes.DELETE_SUCCESS
     }
 }
 
+// Get all items that is currently in the user's cart
 export const getCart = () => {
     return dispatch => {
         let totalPrice = null;
@@ -41,9 +44,12 @@ export const getCart = () => {
     }
 }
 
+// Delete an item from the cart
 export const deleteCart = (name) => {
     return dispatch => {
         var ref = firebase.database().ref('Cart');
+        // The name of the item is passed through
+        // Searches firebase of item with same name and deletes it
         ref.orderByChild('name').equalTo(name).on("value", snapshot => {
             snapshot.forEach(child => {
                 firebase.database().ref('Cart/' + child.key).remove();

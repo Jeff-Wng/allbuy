@@ -14,6 +14,7 @@ class navbar extends Component {
     }
 
     render() {
+        // Toggles notification class based on if user added item to cart
         let addedClass = [classes.Cart];
         if(this.props.added) {
             addedClass = [classes.Cart, classes.Add];
@@ -25,6 +26,7 @@ class navbar extends Component {
         }
 
         let nav = null;
+        // Users who are authenticated gets access to Orders and logout
         if(this.props.loggedIn) {
             nav = 
                 <React.Fragment>
@@ -33,6 +35,7 @@ class navbar extends Component {
                     <Link to='/cart' className={addedClass.join(' ')}>Cart</Link>
                     <p onClick={this.props.signOut}>Log-Out</p>
                 </React.Fragment>
+        // Users not authenticated only has access for login and cart
         } else if (!this.props.loggedIn) {
             nav = 
                 <React.Fragment>
@@ -47,6 +50,7 @@ class navbar extends Component {
                 <div className={classes.User}>
                     {nav}
                 </div>
+                {/* Mobile sidebar burger icon */}
                 <div className={burgerClass.join(' ')}>
                     <div onClick={this.onClickHandler} className={classes.Bar1}></div>
                     <div onClick={this.onClickHandler} className={classes.Bar2}></div>

@@ -5,6 +5,7 @@ const initialState = {
     items: []
 }
 
+// Toy items successfully retrieved from Firebase
 const toySuccess = (state, action) =>{
     return updateObject(state, {
         items: action.items

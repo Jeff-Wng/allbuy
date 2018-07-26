@@ -8,6 +8,7 @@ const initialState = {
     hasItems: false
 }
 
+// Item added to cart success, update state with item info
 const cartSuccess = (state, action) =>{
     return updateObject(state, {
         keys: action.keys,

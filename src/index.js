@@ -17,6 +17,7 @@ import toyReducer from './store/Reducers/toyReducer';
 import navbarReducer from './store/Reducers/navbarReducer';
 import cartReducer from './store/Reducers/cartReducer';
 
+// Initialize Google Firebase
 var config = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_URL,
@@ -36,9 +37,10 @@ const rootReducer = combineReducers({
     cart: cartReducer
 })
 
+// Chrome Redux dev tool
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const app = (
     <Provider store={store}>
@@ -50,3 +52,4 @@ const app = (
 
 ReactDOM.render( app, document.getElementById('root'));
 registerServiceWorker();
+

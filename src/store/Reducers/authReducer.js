@@ -9,6 +9,8 @@ const initialState = {
     error: ''
 }
 
+// Authentication with Firebase success
+// State stores user info
 const authSuccess = (state, action) => {
     return updateObject(state, {
         name: action.name,
@@ -18,6 +20,8 @@ const authSuccess = (state, action) => {
     })
 }
 
+// USer logs out
+// State is cleared of user info
 const authOut = (state, action) => {
     return updateObject(state, {
         name: '',
@@ -27,6 +31,7 @@ const authOut = (state, action) => {
     })
 }
 
+// Authentication error
 const getAuthErr = (state, action) => {
     return updateObject(state, {
         error: action.error

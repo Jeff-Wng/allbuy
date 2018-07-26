@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 const apparelInfo = (props) => {
     let largeImg = null;
+    // Changes preview image
     if(props.changeImg) {
         largeImg = props.img1;
     } else if (!props.changeImg) {
@@ -11,16 +12,19 @@ const apparelInfo = (props) => {
     }
 
     let sizes = [];
+    // Retrieve available sizes and stored in array
     for(let key in props.sizes) {
         sizes.push(props.sizes[key]);
     }
 
+    // Map those sizes into a dropdown
     let choices = sizes.map(choices => {
         return <option value={'' + choices} key={choices}>{choices}</option>
     })
 
     return (
         <div className={classes.ApparelInfo}>
+            {/* Back button to return to previous page */}
             <Link to={'' + props.prevPath}><i className={classes.Arrow} /></Link>
             <h1>{props.name}</h1>
             <div className={classes.Pictures}>

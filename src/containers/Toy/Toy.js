@@ -8,12 +8,13 @@ import * as actions from '../../store/Actions/index';
 class Game extends Component {
 
     componentDidMount() {
+        // Retrieves Toy items from firebase and reset notification status
         this.props.getToy();
         this.props.reset();
     }
 
     render() {
-
+        // Maps every toy item and returns ToyItems component, passed info as props
         let catalog = this.props.items.map(items => {
             return <ToyItems 
                 key={items.name}
